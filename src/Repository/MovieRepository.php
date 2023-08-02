@@ -24,9 +24,12 @@ class MovieRepository
 
     public function addMovie(array $array)
     {
+
+
         $query = $this->pdoService->getPdo()->prepare(
-            "INSERT INTO movie(title, release_date) VALUES (:title, :releaseDate)" );
-        
+            "INSERT INTO movie(title, release_date) VALUES (:title, :releaseDate)"
+        );
+
         $query->bindParam(':title', $array['title']);
         $query->bindParam(':releaseDate', $array['releaseDate']);
 
@@ -36,13 +39,11 @@ class MovieRepository
 
     //array de Movie si en objet
     public function findByTitle(string $title): array
-{
-    $query = $this->pdoService->getPdo()->prepare("SELECT * FROM movie WHERE title LIKE :title");
-    $query->bindValue(':title', "%$title%");
-    $query->execute();
+    {
+        $query = $this->pdoService->getPdo()->prepare("SELECT * FROM movie WHERE title LIKE :title");
+        $query->bindValue(':title', "%$title%");
+        $query->execute();
 
-    return $query->fetchAll(\PDO::FETCH_ASSOC);
-}
-
-
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }

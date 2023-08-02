@@ -8,7 +8,7 @@ $movieRepository = new MovieRepository();
 
 var_dump($_POST);
 
-if (isset($_POST['title']) && isset($_POST['date'])) {
+if (isset($_POST['title']) && isset($_POST['releaseDate'])) {
     $title = $_POST['title'];
     $date = $_POST['releaseDate']; 
 

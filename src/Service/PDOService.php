@@ -8,7 +8,7 @@ class PDOService
 {
     private PDO $PDO;
 
-    private string $dsn = "mysql:host=127.0.0.1:3306;dbname=sneakpeak";
+    private string $dsn = "mysql:host=127.0.0.1:3306;dbname=exampdo";
     private string $user ="root";
     private string $password = "";
 
