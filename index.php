@@ -49,7 +49,7 @@ $actors = $actorRepository->findAll();
             <!-- Gérer l'affichage des films dans un tableau ici -->
             <ul>
                 <?php foreach ($movies as $movie) : ?>
-                    <li><?= $movie['title'] ?></li>
+                    <li><?= $movie['title'] . ' - ' . $movie['release_date'] ?></li>
                 <?php endforeach ?>
             </ul>
         </div>
